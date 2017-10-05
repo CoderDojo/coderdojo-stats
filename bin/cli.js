@@ -1,13 +1,13 @@
 import program from 'commander';
-import connection from './connection';
-import pkg from '../../package.json';
+import connection from '../lib/util/connection';
+import pkg from '../package.json';
 
 program
   .version(pkg.version)
   .usage('[options]')
-  .option('--get-stats', 'Output stats to file')
-  .option('--get-reg-stats', 'Output regular stats to file and uplod to s3')
-  .option('--interval <days>', 'Amount of previous days to gather stats for', parseInt)
+  .option('-s, --get-stats', 'Output regular stats to file and uplod to s3')
+  .option('-i, --interval <days>', 'Amount of previous days to gather stats for', parseInt)
+  .option('-o, --output', 'Write out to file')
   .option('--get-champions', 'Output champions emails signed up to mailing list to file')
   .option('--get-mentors', 'Output mentors emails signed up to mailing list to file')
   .option('--get-parents', 'Output parents emails signed up to mailing list to file')
@@ -40,7 +40,6 @@ program
 
 export const interval = program.interval || '30';
 export const getStats = program.getStats || false;
-export const getRegularStats = program.getRegStats || false;
 export const getChampions = program.getChampions || false;
 export const getMentors = program.getMentors || false;
 export const getParents = program.getParents || false;
@@ -60,6 +59,7 @@ export const stats = connection({
   dojosdb: program.dojosdb || 'cp-dojos-development',
   eventsdb: program.eventsdb || 'cp-events-development',
 });
+export const output = program.output || false;
 const outputHelp = program.outputHelp;
 export const help = outputHelp.bind(program);
 export const aws = {

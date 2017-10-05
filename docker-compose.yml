@@ -6,7 +6,7 @@ services:
       dockerfile: db.Dockerfile
   stats:
     image: coderdojo/stats
-    command: '--get-stats --users-host db --dojos-host db --events-host db'
+    command: '-so --users-host db --dojos-host db --events-host db'
     volumes:
       - ./stats:/usr/src/app/stats
     depends_on:

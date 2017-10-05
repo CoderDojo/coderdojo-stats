@@ -4,13 +4,9 @@
   "description": "Quick and dirty coderdojo stats",
   "main": "index.js",
   "bin": {
-    "cd-stats": "index.js"
+    "cd-stats": "bin"
   },
-  "files": [
-    "index.js",
-    "yarn.lock",
-    "lib"
-  ],
+  "files": ["index.js", "yarn.lock", "lib"],
   "@std/esm": {
     "esm": "js"
   },
