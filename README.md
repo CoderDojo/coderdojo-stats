@@ -5,10 +5,6 @@
 To generate stats run the following commands
 
 ```
-docker-compose up -d db
-docker-compose run --rm db pg_restore -C -U platform -h db -Fd /db/dojos
-docker-compose run --rm db pg_restore -C -U platform -h db -Fd /db/events
-docker-compose run --rm db pg_restore -C -U platform -h db -Fd /db/users
 docker-compose up stats
 ```
 
