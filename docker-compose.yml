@@ -5,7 +5,9 @@ services:
       context: .
       dockerfile: db.Dockerfile
   stats:
-    image: coderdojo/stats
+    build:
+      context: .
+      dockerfile: Dockerfile
     command: '--get-stats --users-host db --dojos-host db --events-host db'
     volumes:
       - ./stats:/usr/src/app/stats
