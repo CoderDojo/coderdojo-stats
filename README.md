@@ -5,6 +5,10 @@
 To generate stats run the following commands
 
 ```
+docker-compose down -v
+docker-compose build
+docker-compose up db
+# ensure db is running ...
 docker-compose up stats
 ```
 
