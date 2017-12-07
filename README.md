@@ -1,3 +1,5 @@
+# This script is deprecated in favour of Google Data Studios
+
 # CoderDojo-stats
 
 ## Run
